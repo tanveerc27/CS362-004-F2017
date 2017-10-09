@@ -651,7 +651,7 @@ void adventurerEffect(struct gameState *state, int currentPlayer){
 	int cardDrawn;
 	int z = 0;// this is the counter for the temp hand
 	
-	    while(drawntreasure<3){		//CHANGED NUMBER OF TREASURE CARD FROM 2 to 3
+	    while(drawntreasure<3){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -676,7 +676,7 @@ void adventurerEffect(struct gameState *state, int currentPlayer){
 void smithyEffect(struct gameState *state, int currentPlayer, int handPos){
 	int i = 0;
 	
-	for (i = 0; i < 2; i++)		//CHANGED BOUNDARY FROM 3 to 2
+	for (i = 0; i < 2; i++)	
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -735,7 +735,7 @@ void stewardEffect(struct gameState *state, int currentPlayer, int handPos, int 
 	  if (choice1 == 1)
 	{
 	  //+2 cards
-	  drawCard(currentPlayer, state);		//CHANGED ONLY 1 CARD DRAWN
+	  drawCard(currentPlayer, state);
 	  //drawCard(currentPlayer, state);
 	}
       else if (choice1 == 2)

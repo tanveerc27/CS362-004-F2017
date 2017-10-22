@@ -34,7 +34,8 @@ player: player.c interface.o
 
 	
 unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
-
+	$(info /********** REDIRECTING OUTPUTS TO --> unittestresults.out **********/)
+	
 	./unittest1 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	

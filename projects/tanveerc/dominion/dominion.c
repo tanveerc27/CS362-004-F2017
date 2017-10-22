@@ -676,7 +676,7 @@ void adventurerEffect(struct gameState *state, int currentPlayer){
 void smithyEffect(struct gameState *state, int currentPlayer, int handPos){
 	int i = 0;
 	
-	for (i = 0; i < 2; i++)	
+	for (i = 0; i < 2; i++)		
 	{
 	  drawCard(currentPlayer, state);
 	}

@@ -37,28 +37,36 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	$(info /********** REDIRECTING OUTPUTS TO --> unittestresults.out **********/)
 	
 	./unittest1 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b unittest1.c >> unittestresults.out
+
 	./unittest2 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b unittest2.c >> unittestresults.out
+
 	./unittest3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b unittest3.c >> unittestresults.out
+
 	./unittest4 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b unittest4.c >> unittestresults.out
+
 	./cardtest1 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b cardtest1.c >> unittestresults.out
 
 	./cardtest2 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b cardtest2.c >> unittestresults.out
+
 	./cardtest3 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b cardtest3.c >> unittestresults.out
+
 	./cardtest4 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
+	gcov -b dominion.c >> unittestresults.out
+	gcov -b cardtest4.c >> unittestresults.out
 	
 unittest1: dominion.o unittest1.c
 	gcc -o unittest1 unittest1.c -g dominion.o rngs.o $(CFLAGS)

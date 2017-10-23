@@ -67,10 +67,10 @@
 	//PASS Condition: Hand is unchanged (1 additions and 1 discard) AND deck decreases by 1 cards
  	if((handCountAfter == (handCountBefore + 1 - 1)) && (deckCountAfter == deckCountBefore - 1))
  	{
- 		printf("PASS: Player gets +1 cards\n");
+ 		printf("PASS: Player gets +1 cards\n\n");
  	}
  	else
-		printf("FAIL: Player gets +1 cards\n"); 
+		printf("FAIL: Player gets +1 cards\n\n"); 
  
 
  

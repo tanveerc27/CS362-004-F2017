@@ -10,7 +10,7 @@ Program: Random Testing Quiz
 char inputChar()
 {
 	// get random char between ascii value 32 ( SPACE ) and 125 ( } )
-    char randChar = (rand() % (126 - 32)) + 32;
+    	char randChar = (rand() % (126 - 32)) + 32;
     
 	return randChar;
 }

@@ -91,6 +91,7 @@ int main(){
       deckCountAfter = testG.deckCount[player];			
       coinsAfter = testG.coins;
 
+      //check player hand increases by 1 (2 adds and 1 discard)
       if (choice1 == 1){
 	 testAddCard++;
 	 addCards = 2;
@@ -100,6 +101,7 @@ int main(){
 
       }
 
+      //check number of coins increases by 2
       else if (choice1 == 2) {
 	 testCoins++;
 	 if (coinsAfter != coinsBefore + 2)
@@ -107,10 +109,11 @@ int main(){
 
       }
 
+      //check player hand decreases by 3 (2 trashed and 1 discard)
       else if (choice1 == 3) {
 	 testTrash++;
 	 discards = 3;
-	 if ((handCountAfter != handCountBefore - discards) && (deckCountAfter != deckCountBefore))
+	 if (handCountAfter != handCountBefore - discards)
 	    option3error++;
 
       }

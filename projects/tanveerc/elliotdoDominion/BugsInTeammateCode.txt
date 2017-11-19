@@ -1,0 +1,76 @@
+**************************************************************************************
+BUG 1
+
+Title: Playing Smithy() card adds incorrect number of cards in player’s hand
+
+Class: Minor Bug
+
+Is it reproducible: Yes
+
+Description: 	*******TEST 1: Player gets +3 cards *******
+		FAIL: Player gets +3 cards
+
+The testcase used keeps track of the number of cards in player’s hand before and after 
+the smithy card is played. The player hand should contain the smithy card before the 
+play is executed. The play should result in addition of 3 randomly chosen card from the 
+player’s deck to the hand, while also removing the smithy card from hand.
+
+Expected Results: Let the number of cards in player’s hand before smithy card played is X.
+Then after play the number of cards in hand would be X + 2 (3 additions and 1 played)
+
+Actual Results: The number of card in player’s hand after play was X+3 (4 additions and 
+1 played)
+
+
+***************************************************************************************
+BUG 2
+
+Title: Playing Adventurer() card does not add two treasure cards to player’s hand and
+does not remove two treasure cards from the player’s deck
+
+Class: Minor Bug
+
+Is it reproducible: Yes
+
+Description: 	*******TEST 1: Two treasure cards are added to hand*******
+		FAIL: Two treasure cards are added
+		*******TEST 2: No. of treasure card in deck decreased by 2 *******
+		FAIL: No. of treasure cards in deck decreased by 2 
+
+The testcase used initializes a game state where both hand and deck contains at least 2 
+treasure cards. The player hand should contain the adventurer card in hand before execution 
+of the play. For both hand and deck the number of treasure cards before and after the 
+adventurer card is played is monitored. The play should result in exactly 2 treasure cards 
+being removed from the player’s deck and added to their hand.
+
+Expected Results: Let the number of treasure cards in hand be X and in deck be Y. Then after 
+play hand is expected to have X + 2 and deck Y – 2.
+
+Actual Results: Number of treasure cards in hand X + 3 and in deck Y – 3.
+
+
+**************************************************************************************
+BUG 3
+
+Title: Playing Village() card adds incorrect number of Actions to village.
+
+Class: Minor Bug
+
+Is it reproducible: Yes
+
+Description: 	*******TEST 2: Player gains +2 actions *******
+		FAIL: Player gains +2 actions
+
+The testcase used keeps track of the number of Actions the player is allowed before and after 
+the village card is played. The player hand should contain the village card before the play 
+is executed. The play should result in addition of 2 actions to the current player’s allowance. 
+
+IMPORTANT NOTE: Village is an Action card itself, therefore playing the card would result in 
+deduction of 1 action from current player’s action allowance before 2 action is added.
+
+Expected Results: Let the number of Actions before play be X. Then after play remaining Action 
+of the current player would be X + 1 (2 addition and 1 used by Village)
+
+Actual Results: Number of Action remaining is X + 2 (2 addition)
+
+
